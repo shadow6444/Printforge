@@ -7,9 +7,9 @@ const ModelCategoryPage = async ({
   params,
   searchParams,
 }: {
-  searchParams: {
+  searchParams: Promise<{
     query?: string;
-  };
+  }>;
   params: Promise<{ slug: string }>;
 }): Promise<JSX.Element> => {
   const { slug } = await params;

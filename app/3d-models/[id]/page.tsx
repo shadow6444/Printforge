@@ -20,8 +20,8 @@ const ModelDetailPage = async ({
   )}/${String(date.getDate()).padStart(2, "0")}/${date.getFullYear()}`;
 
   return (
-    <section className="flex-1 flex gap-10 pb-4 pt-5 items-center justify-center px-10">
-      <div className="w-lg aspect-square relative">
+    <section className="flex flex-col sm:flex-row gap-2 sm:gap-10 pb-6 pt-5 items-center justify-center sm:px-6 lg:px-10">
+      <div className="w-full max-w-md lg:max-w-lg aspect-square relative">
         <Image
           src={modelImage}
           alt="model image"
@@ -29,17 +29,17 @@ const ModelDetailPage = async ({
           className="object-cover"
         />
       </div>
-      <div className="flex flex-col flex-wrap gap-3 w-sm">
-        <div className="flex items-center gap-1">
+      <div className="flex flex-col flex-wrap gap-3 w-full lg:w-sm mt-4 lg:mt-0">
+        <div className="flex items-center gap-1 xl:text-2xl lg:text-xl">
           <FaRegHeart />
           <span>{model.likes}</span>
         </div>
-        <h2 className="text-[22px] font-bold line-clamp-1">{model.name}</h2>
-        <p className="border border-[#A1A1A1] px-3 py-1 rounded-full w-fit">
+        <h2 className="xl:text-[32px] lg:text-2xl font-bold sm:text-3xl max-sm:text-2xl">{model.name}</h2>
+        <p className="border border-[#A1A1A1] px-3 py-1 rounded-full w-fit xl:text-base text-sm">
           <span>{model.category}</span>
         </p>
-        <p className="line-clamp-3">{model.description}</p>
-        <p className="mt-4">Added on {formatted}</p>
+        <p className="xl:text-2xl text-xl">{model.description}</p>
+        <p className="mt-4 xl:text-base text-sm">Added on {formatted}</p>
       </div>
     </section>
   );

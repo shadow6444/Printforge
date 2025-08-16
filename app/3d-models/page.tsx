@@ -5,9 +5,9 @@ import { JSX } from "react";
 const _3DModelsPage = async ({
   searchParams,
 }: {
-  searchParams: {
+  searchParams: Promise<{
     query?: string;
-  };
+  }>;
 }): Promise<JSX.Element> => {
   const models: Model[] = await getModels();
   const { query } = await searchParams;
