@@ -21,8 +21,9 @@ const ModelCard = ({ model }: { model: Model }): JSX.Element => {
       </div>
       <div className="flex flex-col flex-1 justify-between p-4 gap-4 border-x border-b rounded-b-xl border-[#A1A1A1]">
         <div className="flex flex-col gap-2">
-          <h2 className="text-[22px] font-bold line-clamp-1">{model.name}</h2>
-          <p className="line-clamp-3">{model.description}</p>
+          <h2 className="text-lg sm:text-xl lg:text-[22px] font-bold line-clamp-1">{model.name}</h2>
+<p className="text-sm sm:text-base line-clamp-3">{model.description}</p>
+
         </div>
 
         <div className="flex flex-col gap-2">

@@ -11,7 +11,7 @@ const _3DModelsPage = async ({
 }): Promise<JSX.Element> => {
   const models: Model[] = await getModels();
   const { query } = await searchParams;
-  const filteredModels: Model[] = query 
+  const filteredModels: Model[] = query
     ? models.filter(
         (model: Model) =>
           model.name.toLowerCase().includes(query.toLowerCase()) ||

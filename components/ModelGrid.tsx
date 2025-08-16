@@ -13,24 +13,29 @@ const ModelGrid = ({
   query?: string;
 }): JSX.Element => {
   return (
-    <div className="flex flex-col gap-8">
-      <div className="flex justify-between items-center sticky bg-white opacity-95 top-0 z-10 py-4">
-        <h1 className="font-bold text-[32px] leading-tight">{type}</h1>
+    <div className="flex flex-col md:gap-4 gap-2 relative">
+      <div className="flex max-sm:flex-col max-md:gap-6 justify-between md:items-center sticky bg-white opacity-95 max-lg:top-10 top-0 z-10 py-4">
+        <h1 className="font-bold text-2xl sm:text-3xl lg:text-[32px] leading-tight max-sm:hidden">
+          {type}
+        </h1>
         <Form
           action=""
-          className="border border-[#606060] rounded-full p-1.5 w-72"
+          className="border border-[#606060] rounded-full p-1.5 w-full sm:w-72"
         >
           <input
             type="text"
             name="query"
             placeholder="Search for a model"
-            className="px-3 py-1 w-full outline-none focus:outline-none"
+            className="px-3 py-1 w-full text-sm sm:text-base outline-none focus:outline-none"
             defaultValue={query}
             autoComplete="off"
           />
         </Form>
+        <h1 className="font-bold text-2xl sm:text-3xl lg:text-[32px] leading-tight sm:hidden">
+          {type}
+        </h1>
       </div>
-      <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <div className="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
         {models &&
           models.map((model: Model) => (
             <ModelCard key={model.id} model={model} />
